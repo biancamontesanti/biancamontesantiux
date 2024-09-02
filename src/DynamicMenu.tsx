@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import AlarmClock from './AlarmClock';
 import SnakeGame from './SnakeGame';
 import Calculator from './Calculator';
+import AboutMe from './AboutMe';
 
 interface MenuItem {
   label: string;
@@ -36,9 +37,7 @@ const DynamicMenu: React.FC = () => {
 
   const menuItems: MenuItem[] = [
 
-    { label: 'Bio', content: <h1>Sou formada em Administração e possuo ampla experiência em programação e gerenciamento de projetos.<br/>
-      Minha carreira tem sido marcada pela integração de inteligência artificial em soluções inovadoras e pelo compromisso constante em me manter atualizada com as últimas tendências tecnológicas.
-     Estou sempre buscando novas oportunidades para aplicar meus conhecimentos em ambientes dinâmicos e desafiadores.</h1> },
+    { label: 'Bio', content: <AboutMe />},
     { label: 'Calculator', content: <Calculator /> },
     { label: 'Game', content: <SnakeGame /> },
     { label: 'Alarm', content: <AlarmClock /> },

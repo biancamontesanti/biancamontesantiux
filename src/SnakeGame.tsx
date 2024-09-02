@@ -195,7 +195,8 @@ const SnakeGame: React.FC = () => {
           </div>
         )}
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', 
+  outline: 'none' }}>
         <ArrowButton direction="◄" onClick={() => handleDirection({ x: -1, y: 0 })} />
         <ArrowButton direction="▲" onClick={() => handleDirection({ x: 0, y: -1 })} />
         <ArrowButton direction="▼" onClick={() => handleDirection({ x: 0, y: 1 })} />
