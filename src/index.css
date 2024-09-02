@@ -1,0 +1,587 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Styles for the menu container */
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+/* Styles for the menu list */
+.menu-list {
+  display: flex;
+  justify-content: center;
+  padding: 0rem;
+  
+}
+
+.menu-list > * + * {
+  margin-left: rem;}
+
+  .glass-btn {
+    padding: 10px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 90px;
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  .glass-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .app-container {
+    position: relative; 
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .gradients-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .g1, .g2, .g3, .g4, .g5, .interactive {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+  
+  .g1 { background: radial-gradient(circle at center, rgba(255,0,0,0.8), rgba(255,0,0,0) 50%); }
+  .g2 { background: radial-gradient(circle at center, rgba(0,255,0,0.8), rgba(0,255,0,0) 50%); }
+  .g3 { background: radial-gradient(circle at center, rgba(0,0,255,0.8), rgba(0,0,255,0) 50%); }
+  .g4 { background: radial-gradient(circle at center, rgba(255,255,0,0.8), rgba(255,255,0,0) 50%); }
+  .g5 { background: radial-gradient(circle at center, rgba(0,255,255,0.8), rgba(0,255,255,0) 50%); }
+  
+  .interactive {
+    background: radial-gradient(circle at center, rgba(255,255,255,0.8), rgba(255,255,255,0) 50%);
+    transition: transform 0.1s ease-out;
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .menu-container {
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .menu-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .glass-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+
+  Centered Styles
+
+/* Add this to your existing CSS file or create a new one */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.app-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.gradients-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.g1, .g2, .g3, .g4, .g5, .interactive {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.g1 { background: radial-gradient(circle at center, rgba(255,0,0,0.8), rgba(255,0,0,0) 50%); }
+.g2 { background: radial-gradient(circle at center, rgba(0,255,0,0.8), rgba(0,255,0,0) 50%); }
+.g3 { background: radial-gradient(circle at center, rgba(0,0,255,0.8), rgba(0,0,255,0) 50%); }
+.g4 { background: radial-gradient(circle at center, rgba(255,255,0,0.8), rgba(255,255,0,0) 50%); }
+.g5 { background: radial-gradient(circle at center, rgba(0,255,255,0.8), rgba(0,255,255,0) 50%); }
+
+.interactive {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8), rgba(255,255,255,0) 50%);
+  transition: transform 0.1s ease-out;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.app-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.gradients-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.g1, .g2, .g3, .g4, .g5, .interactive {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+}
+
+.g1 { background: radial-gradient(circle at center, rgba(255,0,0,0.8), rgba(255,0,0,0) 50%); top: -250px; left: -250px; }
+.g2 { background: radial-gradient(circle at center, rgba(0,255,0,0.8), rgba(0,255,0,0) 50%); top: -250px; right: -250px; }
+.g3 { background: radial-gradient(circle at center, rgba(0,0,255,0.8), rgba(0,0,255,0) 50%); bottom: -250px; left: -250px; }
+.g4 { background: radial-gradient(circle at center, rgba(255,255,0,0.8), rgba(255,255,0,0) 50%); bottom: -250px; right: -250px; }
+.g5 { background: radial-gradient(circle at center, rgba(0,255,255,0.8), rgba(0,255,255,0) 50%); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+.interactive {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8), rgba(255,255,255,0) 50%);
+  transition: transform 0.1s ease-out;
+  pointer-events: none;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-container {
+  padding: 10px;
+  margin: 10px;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+}
+
+
+.alarm-clock {
+  padding: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.current-time {
+  font-size: 4em;
+  text-align: center;
+}
+
+.alarm-input {
+  display: flex;
+  gap: 1rem;
+  outline: none;
+  border: none;
+}
+
+.glass-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.8rem;
+  outline: none;
+  font-size: 1.4em;
+  border-radius: 8px;
+  
+}
+
+.alarm-list {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alarm-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.stop-alarm {
+  margin-top: 1rem;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.name{
+  display: flex;
+  font-size: 3em;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  
+}
+
+/* Add these styles to your existing CSS */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 80px;
+  padding-left: 30px;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  color: white;
+}
+
+.overlay-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.overlay-content button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* //// */
+
+.menu-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-list li {
+  margin: 0 5px;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* Remove default outline */
+  outline: none;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Add custom focus styles */
+.glass-btn:focus {
+  /* This creates a white, semi-transparent ring around the button */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+/* Optional: If you want to remove the focus styles when using a mouse */
+.glass-btn:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+
+.close-btn:focus {
+  outline: none;
+}
+
+.delete-btn {
+  background: rgba(209, 209, 209, 0.2) !important;
+  transition: background 0.3s ease !important;
+}
+
+.delete-btn:hover {
+  background: rgba(198, 198, 198, 0.4) !important;
+}
+
+
+
+.content-content{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 8;
+  z-index: 10;
+
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* padding-left: 50rem; */
+
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.content-wrapper {
+  text-align: center;
+  padding: 2rem;
+  /* background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); */
+  /* border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.name {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.occupation {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@font-face {
+  font-family: quick-sand;
+  src: url(../Quicksand-VariableFont_wght.ttf)
+}
+
+/* .quick-sand {
+  font-family: quick-sand;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+} */
